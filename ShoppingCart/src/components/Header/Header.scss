@@ -31,10 +31,13 @@
             .count{
                 background: rgb(212, 41, 41);
                 color:azure;
-                padding: 2px 8px;
+                padding: 4px 8px;
                 border-radius: 50%;
                 margin-bottom: 20px;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                position:absolute;
+                top:-8px;
+                right: -8px;
             }
             
         }
