@@ -8,12 +8,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
 
-        .left{
+        .left h2{
             margin-top: 20px;
             cursor: pointer;
             font-family:'Roboto', sans-serif;
-            font-size: larger;
+            font-size: 24px;
             margin-left: 80px;
             color:black;
         }
@@ -38,4 +39,3 @@
             
         }
     }
-}

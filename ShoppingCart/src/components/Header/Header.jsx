@@ -9,7 +9,7 @@ function Header() {
           <h2>Cart</h2>
         </div>
           <div className='right'>
-            <i className='fas fa-count-plus'></i>
+            <i className='fas fa-cart-plus'></i>
             <div className='count'>1</div>
           </div>
       </div>
@@ -17,4 +17,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;
