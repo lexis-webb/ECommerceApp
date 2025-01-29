@@ -10,7 +10,7 @@ function Header() {
         </div>
           <div className='right'>
             <i className='fas fa-count-plus'></i>
-            <div className='count'></div>
+            <div className='count'>1</div>
           </div>
       </div>
     </div>
