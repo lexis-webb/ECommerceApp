@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import products from '../../data';
+import Card from '../Card/Card';
+import './Products.scss';
 
-function Products() {
+const Products = () => {
   return (
-    <div>Products</div>
+    <div className='products'>
+      {
+        products.map(item => {
+          <Card key= {item.id} />
+        })
+      }
+    </div>
   )
 }
 
-export default Products
+export default Products;
