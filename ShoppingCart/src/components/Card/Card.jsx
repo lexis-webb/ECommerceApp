@@ -1,5 +1,6 @@
 import React from 'react';
-import './Card.scss'
+import './Card.scss';
+
 
 const Card = ({item}) => {
   const {id, title, description, category, price, image} = item || {};
@@ -18,4 +19,4 @@ const Card = ({item}) => {
   )
 }
 
-export default Card
+export default Card;

@@ -6,10 +6,9 @@ import './Products.scss';
 const Products = () => {
   return (
     <div className='products'>
-      {
-        products.map(item => {
+      {products.map((item) => (
           <Card item={item} key= {item.id} />
-        })
+      ))
       }
     </div>
   )
