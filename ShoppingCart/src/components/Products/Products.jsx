@@ -8,7 +8,7 @@ const Products = () => {
     <div className='products'>
       {
         products.map(item => {
-          <Card key= {item.id} />
+          <Card item={item} key= {item.id} />
         })
       }
     </div>
