@@ -1,30 +1,59 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Cart.scss';
 
-const Cart = () => {
+const Cart = ({cart, setCart, handleProductQuantity}) => {
+
+  const [price, setPrice] = useState(0)
+
+  const handlePrice = () =>{
+    let totalAmount = 0
+    cart.map(item => {
+      totalAmount +- item.amount * item.price
+    })
+
+    setPrice(totalAmount)
+  }
+
+  useEffect(() => {
+    handlePrice()
+  })
+
+  const removeProduct = id => {
+    const newList = cart.filter(item => item.id !== id)
+    setCart(newList)
+  }
   return (
     <div className='cart'>
-      <div className='cart-box'>
-        <div className='cart-img'>
-          <img src="hffs" />
-          <p>hahfhf</p>
-        </div>
 
-        <div>
-          <button>+</button>
-          <button>1</button>
-          <button>-</button>
-        </div>
+      {
+        cart.map(item => (
 
-        <div>
-          <span>1</span>
-          <button>Remove</button>
+          <div className='cart-box' key={item.id}>
+          <div className='cart-img'>
+            <img src={item.image} />
+            <p>{item.title}</p>
+          </div>
+  
+          <div>
+            <button onClick= {() => handleProductQuantity(item, +1)}>+</button>
+            <button>{item.amount}</button>
+            <button onClick = {() => handleProductQuantity(item, -1)}>-</button>
+          </div>
+  
+          <div>
+            <span>{item.price}</span>
+            <button onClick = {() => removeProduct(item.id)}>Remove</button>
+          </div>
+  
+          <div className='total'>
+            <span>Total Price: $price</span>
+          </div>
         </div>
+    
+        ))
 
-        <div className='total'>
-          <span>Total Price: $price</span>
-        </div>
-      </div>
+
+      }
     </div>
   )
 }
