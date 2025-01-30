@@ -30,11 +30,26 @@ function App() {
     setCart([...cart, item]);
   };
 
+const handleProductQuantity = (item, d) => {
+let ind = -1;
+cart.forEach((data, index) => {
+  if(data.id === item.id) ind = index;
+});
+
+const tempArray = [...cart];
+tempArray[ind].amount +- d;
+if(tempArray[ind].amount <= 0) {
+  tempArray[ind].amount = 1;
+}
+setCart(tempArray);
+};
   return (
     <>
       <Header size={cart.length} setShow={setShow} />
-      <Products addToCart={addToCart} />
-      <Cart />
+      {
+        show ? <Products addToCart={addToCart} /> :  <Cart cart ={cart} setCart =
+        {setCart} handleProductQuantity = {handleProductQuantity} />
+      }
       
       {warning && <div className='warning'>Product is already in cart</div>}
     </>

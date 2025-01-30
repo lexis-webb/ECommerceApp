@@ -12,7 +12,7 @@ const Card = ({ item, addToCart }) => {
         <h3>{title}</h3>
         <p>{description}</p>
         <p className='price'>${price}</p>
-        <button onClick ={() => addToCart(item)} >Add To Cart</button>
+        <button onClick ={() => addToCart(item)}>Add To Cart</button>
       </div>
 
     </div>
